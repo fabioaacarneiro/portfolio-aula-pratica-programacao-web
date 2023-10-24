@@ -1,14 +1,13 @@
-package config;
+package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.config;
 
 import java.util.Arrays;
 
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.entities.User;
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-
-import entities.User;
-import repositories.UserRepository;
 
 @Configuration
 @Profile("test")

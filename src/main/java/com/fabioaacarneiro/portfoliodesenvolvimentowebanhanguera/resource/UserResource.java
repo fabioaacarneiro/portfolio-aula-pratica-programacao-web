@@ -1,19 +1,18 @@
-package resource;
+package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.resource;
 
 import java.net.URI;
 import java.util.List;
 
-import org.apache.coyote.Response;
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.entities.User;
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import entities.User;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import services.UserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping(value = "/users")
 public class UserResource {
 
 	@Autowired

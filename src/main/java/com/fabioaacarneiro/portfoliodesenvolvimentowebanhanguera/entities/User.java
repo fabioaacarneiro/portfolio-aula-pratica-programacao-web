@@ -1,4 +1,4 @@
-package entities;
+package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.entities;
 
 import java.io.Serial;
 import java.io.Serializable;

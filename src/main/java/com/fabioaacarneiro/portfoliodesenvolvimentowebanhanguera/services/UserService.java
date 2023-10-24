@@ -1,14 +1,13 @@
-package services;
+package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.services;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.entities.User;
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.repositories.UserRepository;
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import entities.User;
-import repositories.UserRepository;
-import services.exceptions.ResourceNotFoundException;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
