@@ -1,5 +1,6 @@
 package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.resource.exceptions;
 
+import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.services.exceptions.ResourceCannotBeUpdatedException;
 import com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,20 @@ public class ResourceExceptionHandler {
                 status,
                 e.getMessage(),
                 "User is not found or does not exist",
+                request.getRequestURI());
+
+        return new ResponseEntity<StandardError>(err, status);
+    }
+
+    @ExceptionHandler(ResourceCannotBeUpdatedException.class)
+    public ResponseEntity<StandardError> resourceNotFound(ResourceCannotBeUpdatedException e, HttpServletRequest request) {
+        HttpStatus status = HttpStatus.NOT_MODIFIED;
+
+        StandardError err = new StandardError(
+                new Date(),
+                status,
+                e.getMessage(),
+                "User cannot be updated.",
                 request.getRequestURI());
 
         return new ResponseEntity<StandardError>(err, status);

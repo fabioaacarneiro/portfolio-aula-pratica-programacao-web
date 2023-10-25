@@ -27,6 +27,7 @@ seguintes requerimentos:
 ![alt text](img/getById-id-invalido.png)
 ![alt text](img/insert.png)
 ![alt text](img/update-id-invalido.png)
+### ***obs. No banco de dados H2 ele está sobrescrevendo o id para null***
 ![alt text](img/update-OK.png)
 
 ## Fabio Carneiro - 24/10/2023
