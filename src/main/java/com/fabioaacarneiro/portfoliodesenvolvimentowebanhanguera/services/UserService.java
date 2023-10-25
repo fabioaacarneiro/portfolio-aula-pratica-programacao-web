@@ -29,9 +29,10 @@ public class UserService {
 
 	public void delete(Long id) {
 		try {
-			userRepository.deleteById(id);
+			User userToBeDeleted = findById(id);
+			userRepository.deleteById(userToBeDeleted.getId());
 		} catch (ResourceNotFoundException e) {
-			e.printStackTrace();
+			throw new ResourceNotFoundException();
 		}
 	}
 
@@ -39,13 +40,13 @@ public class UserService {
 		User userToBeUpdated;
 		try {
 			userToBeUpdated = findById(id);
+			userToBeUpdated.setNome(newDataUser.getNome());
+			userToBeUpdated.setEmail(newDataUser.getEmail());
+			userToBeUpdated.setPassword(newDataUser.getPassword());
+			userToBeUpdated.setTelefone(newDataUser.getTelefone());
 		} catch (RuntimeException e) {
 			throw new ResourceNotFoundException();
 		}
-		userToBeUpdated.setNome(newDataUser.getNome());
-		userToBeUpdated.setEmail(newDataUser.getEmail());
-		userToBeUpdated.setPassword(newDataUser.getPassword());
-		userToBeUpdated.setTelefone(newDataUser.getTelefone());
 		return newDataUser;
 	}
 }
