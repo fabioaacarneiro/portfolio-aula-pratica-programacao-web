@@ -1,5 +1,7 @@
 package com.fabioaacarneiro.portfoliodesenvolvimentowebanhanguera.resource.exceptions;
 
+import org.springframework.http.HttpStatus;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -10,14 +12,14 @@ public class StandardError implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private Date timestamp;
-    private Integer status;
+    private HttpStatus status;
     private String error;
     private String message;
     private String path;
 
     public StandardError(){}
 
-    public StandardError(Date timestamp, Integer status, String error, String message, String path) {
+    public StandardError(Date timestamp, HttpStatus status, String error, String message, String path) {
         this.timestamp = timestamp;
         this.status = status;
         this.error = error;
@@ -33,11 +35,11 @@ public class StandardError implements Serializable {
         this.timestamp = timestamp;
     }
 
-    public Integer getStatus() {
+    public HttpStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(HttpStatus status) {
         this.status = status;
     }
 
