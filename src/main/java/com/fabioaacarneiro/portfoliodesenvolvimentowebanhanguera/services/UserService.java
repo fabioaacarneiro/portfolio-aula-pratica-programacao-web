@@ -36,7 +36,12 @@ public class UserService {
 	}
 
 	public User update(Long id, User newDataUser) {
-		User userToBeUpdated = findById(id);
+		User userToBeUpdated;
+		try {
+			userToBeUpdated = findById(id);
+		} catch (RuntimeException e) {
+			throw new ResourceNotFoundException();
+		}
 		userToBeUpdated.setNome(newDataUser.getNome());
 		userToBeUpdated.setEmail(newDataUser.getEmail());
 		userToBeUpdated.setPassword(newDataUser.getPassword());
