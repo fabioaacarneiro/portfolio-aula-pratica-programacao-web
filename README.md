@@ -23,7 +23,7 @@ seguintes requerimentos:
 ### Images dos testes elaborados no Postman:
 
 ![alt text](img/getAll-users.png)
-![alt text](img/getByid.png)
+![alt text](img/getbyid.png)
 ![alt text](img/getById-id-invalido.png)
 ![alt text](img/insert.png)
 ![alt text](img/update-id-invalido.png)
